@@ -1,2 +1,2 @@
-find . -type f -name '*sh' | rev | cut -d'.' -f2 | rev | sed 's/^\///'
+find . -type f -name '*sh' | rev | cut -d'.' -f2 | cut -d '/' -f1 | rev 
 
