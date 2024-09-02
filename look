@@ -1,0 +1,4 @@
+find . -type f -name 'a*' -print
+find . -type d -name 'a*' -print
+find . -type f -name '*z' -print
+find . -type f -name 'z*a' -print
