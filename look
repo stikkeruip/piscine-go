@@ -1,6 +1,1 @@
-{
-  find . -type f -name '*z' ! -print | sort -r
-  find . -type f -name 'a*' ! -name '*z' -print | sort -r
-  find . -type d -name 'a*' ! -print | sort -r
-  find . -type f -name 'z*a!' ! -print | sort -r
-} | sort -r
+find . \( -name 'a*' -or -name '*z' -or -name 'z*a!' \)
