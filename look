@@ -1,6 +1,4 @@
-set +H
-
-find . \( -type f -name 'a*' -print \) -o \
-        \( -type d -name 'a*' -print \) -o \
-        \( -type f -name '*z' -print \) -o \
-        \( -type f -name 'z*a' -print \)
+find . \( -type f -name 'a*' -exec basename {} \; \) -o \
+       \( -type d -name 'a*' -exec basename {} \; \) -o \
+       \( -type f -name '*z' -exec basename {} \; \) -o \
+       \( -type f -name 'z*a' -exec basename {} \; \)
