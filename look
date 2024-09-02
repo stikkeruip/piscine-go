@@ -1,3 +1,5 @@
+set +H
+
 find . \( -type f -name 'a*' -print \) -o \
         \( -type d -name 'a*' -print \) -o \
         \( -type f -name '*z' -print \) -o \
