@@ -1,4 +1,3 @@
-
 files=$(ls -At --time=atime --ignore='.*' --indicator-style=slash)
 
 result=$(echo "$files" | paste -sd, -)
