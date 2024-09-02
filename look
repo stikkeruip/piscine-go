@@ -1,6 +1,6 @@
- {
-  find . -type f -name '*z' -print | sort -r
-  find . -type f -name 'a*' -print | sort -r
-  find . -type d -name 'a*' -print | sort -r
+{
+  find . -type f -name '*z' ! -name 'a*z' -print | sort -r
+  find . -type f -name 'a*' ! -name 'a*z' -print | sort -r
+  find . -type d -name 'a*' ! -name 'a*z' -print | sort -r
   find . -type f -name 'z*a!' -print | sort -r
 } | sort -r
