@@ -1,5 +1,1 @@
-cat <<EOF
-Chameleon
-28
-Male
-EOF
+printf "Chameleon\n28\nMale"
