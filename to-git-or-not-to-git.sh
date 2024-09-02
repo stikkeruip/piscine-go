@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Download the JSON file
-curl -o superheroes.json "https://platform.zone01.gr/assets/superhero/all.json"
+# Download the JSON file and extract the required fields in one step
+curl -s "https://platform.zone01.gr/assets/superhero/all.json" | \
+jq -r '.[] | select(.id == 170) | "\(.name)\n\(.powerstats.power)\n\(.appearance.gender)"'
 
-# Extract and print Name, Power, and Gender of id 170
-jq -r '.[] | select(.id == 170) | "\(.name)\n\(.powerstats.power)\n\(.appearance.gender)"' superheroes.json
