@@ -1,4 +1,4 @@
 find . \( -type f -name 'a*' -exec basename {} \; \) -o \
        \( -type d -name 'a*' -exec basename {} \; \) -o \
        \( -type f -name '*z' -exec basename {} \; \) -o \
-       \( -type f -name 'z*a' -exec basename {} \; \)
+       \( -type f -name 'z*a' -exec basename {} \; \) | sort
