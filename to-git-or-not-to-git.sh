@@ -1,3 +1,3 @@
-echo Chameleon
-echo 28
-echo Male
+printf "Chameleon\n"
+printf "28\n"
+printf "Male\n"
