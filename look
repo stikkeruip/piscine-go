@@ -1,4 +1,4 @@
 find . \( -type f -name '*z' -print \) -o \
        \( -type f -name 'a*' -print \) -o \
        \( -type d -name 'a*' -print \) -o \
-       \( -type f -name 'z*a!' -print \) | sort
+       \( -type f -name 'z*a!' -print \) | sort -r
