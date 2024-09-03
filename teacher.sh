@@ -5,4 +5,4 @@ echo $interview_num
 
 cat interviews/interview-$interview_num
 
-echo "Main suspect: $MAIN_SUSPECT"
+echo "$MAIN_SUSPECT"
