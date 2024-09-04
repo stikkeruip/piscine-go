@@ -11,5 +11,4 @@ func PrintNbr(n int) {
 		PrintNbr(n / 10)
 	}
 	z01.PrintRune(rune(n%10 + '0'))
-	z01.PrintRune('\n')
 }
