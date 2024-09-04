@@ -4,7 +4,7 @@ import "github.com/01-edu/z01"
 
 func PrintCombN(n int) {
 	if n <= 0 || n > 9 {
-		return n
+		return
 	}
 	comb := make([]rune, n)
 	var recurse func(int, int)
