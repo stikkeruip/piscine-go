@@ -1,8 +1,8 @@
-package main
+package printcomb2
 
 import "github.com/01-edu/z01"
 
-func main() {
+func PrintComb2() {
 	first := true
 	for a := 0; a <= 99; a++ {
 		for b := a + 1; b <= 99; b++ {
