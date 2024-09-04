@@ -7,7 +7,7 @@ func isnegative(nb int) {
 		z01.PrintRune('F')
 		z01.PrintRune('\n')
 	}
-	else if {
+	if {
 		z01.PrintRune('T')
 		z01.PrintRune('\n')
 	}
