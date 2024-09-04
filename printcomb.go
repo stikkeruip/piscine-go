@@ -1,6 +1,6 @@
 package printcomb
 
-import "github.com/01-edu/z01 v0.1.0"
+import "github.com/01-edu/z01"
 
 func PrintComb() {
 	first := true
