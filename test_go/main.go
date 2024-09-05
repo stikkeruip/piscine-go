@@ -3,6 +3,11 @@ package main
 import "fmt"
 
 func Atoi(s string) int {
+
+	if len(s) == 0 {
+		return 0
+	}
+
 	rns := []rune(s)
 	sign := 1
 	start := 0
@@ -37,4 +42,5 @@ func main() {
 	fmt.Println(Atoi("-1234"))
 	fmt.Println(Atoi("++1234"))
 	fmt.Println(Atoi("--1234"))
+	fmt.Println(Atoi(""))
 }
