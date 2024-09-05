@@ -13,7 +13,7 @@ func PrintCombN(n int) {
 			for i, digit := range comb {
 				z01.PrintRune(digit)
 			}
-			if comb[0] != rune('0'+10-n) { 
+			if comb[0] != rune('0'+10-n) {
 				z01.PrintRune(',')
 				z01.PrintRune(' ')
 			}
