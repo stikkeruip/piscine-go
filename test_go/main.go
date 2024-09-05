@@ -1,13 +1,12 @@
 package main
 
-import "github.com/01-edu/z01"
+import "fmt"
 
-func PrintStr(s string) {
-	for _, rune := range s {
-		z01.PrintRune(rune)
-	}
+func StrLen(s string) int {
+	return (len([]rune(s)))
 }
 
 func main() {
-	PrintStr("Hello World!")
+	l := StrLen("Hello World!")
+	fmt.Println(l)
 }
