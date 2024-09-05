@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package piscine
 
 func StrRev(s string) string {
 	rns := []rune(s)
@@ -8,10 +6,4 @@ func StrRev(s string) string {
 		rns[i], rns[j] = rns[j], rns[i]
 	}
 	return string(rns)
-}
-
-func main() {
-	s := "Hello World!"
-	s = StrRev(s)
-	fmt.Println(s)
 }
