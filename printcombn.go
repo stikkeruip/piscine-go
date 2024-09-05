@@ -4,7 +4,7 @@ import "github.com/01-edu/z01"
 
 func PrintCombN(n int) {
 	if n <= 0 || n > 9 {
-		return n
+		return
 	}
 	comb := make([]rune, n)
 	var recurse func(int, int)
@@ -12,14 +12,14 @@ func PrintCombN(n int) {
 		if index == n {
 			for i, digit := range comb {
 				z01.PrintRune(digit)
-				if i == n-1 && digit != '9' {
-					z01.PrintRune(',')
-					z01.PrintRune(' ')
-				}
+			}
+			if comb[0] != rune('0'+10-n) { 
+				z01.PrintRune(',')
+				z01.PrintRune(' ')
 			}
 			return
 		}
-		for i := start; i <= 9; i++ {
+		for i := start; i <= 10-n+index; i++ {
 			comb[index] = rune(i + '0')
 			recurse(index+1, i+1)
 		}
