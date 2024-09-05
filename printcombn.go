@@ -10,7 +10,7 @@ func PrintCombN(n int) {
 	var recurse func(int, int)
 	recurse = func(index, start int) {
 		if index == n {
-			for i, digit := range comb {
+			for _, digit := range comb {
 				z01.PrintRune(digit)
 			}
 			if comb[0] != rune('0'+10-n) {
