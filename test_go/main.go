@@ -2,17 +2,18 @@ package main
 
 import "fmt"
 
-func DivMod(a int, b int, div *int, mod *int) {
-	*div = a / b
-	*mod = a % b
+func UltimateDivMod(a *int, b *int) {
+	var temp1 int = *a / *b
+	var temp2 int = *a % *b
+
+	*a = temp1
+	*b = temp2
 }
 
 func main() {
 	a := 13
 	b := 2
-	var div int
-	var mod int
-	DivMod(a, b, &div, &mod)
-	fmt.Println(div)
-	fmt.Println(mod)
+	UltimateDivMod(&a, &b)
+	fmt.Println(a)
+	fmt.Println(b)
 }
