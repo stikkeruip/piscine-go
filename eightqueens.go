@@ -6,7 +6,7 @@ const size = 8
 
 func printSolution(queens []int) {
 	for i := 0; i < size; i++ {
-		z01.PrintRune(rune(queens[i] + 1))
+		z01.PrintRune(rune(queens[i] + '1'))
 	}
 	z01.PrintRune('\n')
 }
