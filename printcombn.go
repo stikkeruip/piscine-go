@@ -31,4 +31,3 @@ func PrintCombN(n int) {
 func main() {
 	PrintCombN(3)
 }
-
