@@ -1,12 +1,12 @@
 package piscine
 
 func IterativePower(n int, p int) int {
-	if n == 0 || p < 0 {
-		return 0
-	}
-
 	if p == 0 {
 		return 1
+	}
+
+	if n == 0 || p < 0 {
+		return 0
 	}
 
 	result := n
