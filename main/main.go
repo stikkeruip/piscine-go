@@ -2,10 +2,8 @@ package main
 
 import (
 	"fmt"
-
-	"piscine"
 )
 
 func main() {
-	fmt.Print(piscine.IterativeFactorial(1000))
+	fmt.Print(10)
 }
