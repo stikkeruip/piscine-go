@@ -79,14 +79,13 @@ func isValidBase(base string) bool {
 	}
 
 	seen := make(map[rune]bool)
-	uniqueCount := 0
 
 	for _, char := range base {
 		if !seen[char] {
 			seen[char] = true
-			uniqueCount++
+			return false
 		}
 	}
 
-	return uniqueCount >= 2
+	return true
 }
