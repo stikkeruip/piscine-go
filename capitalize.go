@@ -8,6 +8,9 @@ func Capitalize(s string) string {
 	for i, r := range runes {
 		if inWord == true && (r < 'a' || r > 'z') {
 			inWord = false
+			if r >= 'A' && r <= 'Z' {
+				runes[i] = r + 32
+			}
 		}
 
 		if inWord == false && (r >= 'a' && r <= 'z') {
