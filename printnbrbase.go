@@ -8,6 +8,14 @@ func PrintNbrBase(nbr int, base string) {
 		z01.PrintRune('V')
 		return
 	}
+	if nbr == -9223372036854775808 {
+		z01.PrintRune('-')
+		minInt := "9223372036854775808"
+		for _, r := range minInt {
+			z01.PrintRune(r)
+		}
+		return
+	}
 	if nbr < 0 {
 		z01.PrintRune('-')
 		nbr = nbr * -1
