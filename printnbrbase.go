@@ -6,7 +6,6 @@ func PrintNbrBase(nbr int, base string) {
 	if !isValidBase(base) {
 		z01.PrintRune('N')
 		z01.PrintRune('V')
-		z01.PrintRune('\n')
 		return
 	}
 	if nbr < 0 {
