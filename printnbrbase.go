@@ -81,10 +81,11 @@ func isValidBase(base string) bool {
 	seen := make(map[rune]bool)
 
 	for _, char := range base {
-		if !seen[char] {
-			seen[char] = true
+		if seen[char] {
 			return false
 		}
+
+		seen[char] = true
 	}
 
 	return true
