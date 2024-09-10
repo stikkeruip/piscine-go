@@ -6,7 +6,7 @@ func AlphaCount(s string) int {
 	count := 0
 
 	for _, i := range runes {
-		if i >= 'a' && i <= 'Z' {
+		if (i >= 'a' && i <= 'z') || (i >= 'A' && i <= 'Z') {
 			count++
 		}
 	}
