@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+
+	"piscine"
 )
 
 func main() {
-	fmt.Print(0)
+	fmt.Print(piscine.AtoiBase("125", "0123456789"))
 }
