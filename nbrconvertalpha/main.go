@@ -33,6 +33,7 @@ func main() {
 			z01.PrintRune(' ')
 		}
 	}
+	z01.PrintRune('\n')
 }
 
 func Atoi(s string) int {
