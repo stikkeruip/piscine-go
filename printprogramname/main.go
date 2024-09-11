@@ -12,6 +12,8 @@ func main() {
 	for _, i := range file {
 		z01.PrintRune(i)
 	}
+
+	z01.PrintRune('\n')
 }
 
 func getBaseFileName(path string) string {
