@@ -7,6 +7,10 @@ import (
 )
 
 func main() {
+	if len(os.Args) == 1 {
+		return
+	}
+
 	offsetUpper := 0
 	start := 1
 
