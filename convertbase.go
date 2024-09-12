@@ -1,24 +1,29 @@
 package piscine
 
 func ConvertBase(nbr, baseFrom, baseTo string) string {
-	decimalValue := binaryToDecimal(nbr, baseFrom)
+	decimalValue := baseToDecimal(nbr, baseFrom)
 
 	return decimalToBase(decimalValue, baseTo)
 }
 
-func binaryToDecimal(nbr, baseFrom string) int {
+func baseToDecimal(nbr, baseFrom string) int {
 	decimalValue := 0
 	baseLength := len(baseFrom)
 
+	baseMap := make(map[rune]int)
+	for i, ch := range baseFrom {
+		baseMap[ch] = i
+	}
+
 	for _, ch := range nbr {
-		decimalValue = decimalValue*baseLength + int(ch-'0')
+		decimalValue = decimalValue*baseLength + baseMap[ch]
 	}
 	return decimalValue
 }
 
 func decimalToBase(decimalValue int, baseTo string) string {
 	if decimalValue == 0 {
-		return "0"
+		return string(baseTo[0])
 	}
 
 	baseLength := len(baseTo)
