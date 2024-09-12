@@ -31,6 +31,9 @@ func main() {
 		} else if len(os.Args[i]) >= 9 && os.Args[i][:9] == "--insert=" {
 			getInsert = true
 			strToInsert = os.Args[i][9:]
+		} else if os.Args[i][:3] == "-i=" && len(os.Args[i]) >= 3 {
+			getInsert = true
+			strToInsert = os.Args[i][3:]
 		} else {
 			str = str + os.Args[i]
 		}
