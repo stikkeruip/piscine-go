@@ -47,6 +47,7 @@ func main() {
 	}
 
 	fmt.Print(str)
+	fmt.Println()
 }
 
 func orderString(str string) string {
