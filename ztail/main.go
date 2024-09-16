@@ -7,7 +7,7 @@ import (
 
 func checkFile(e error, name string) bool {
 	if e != nil {
-		fmt.Printf("open %s: no such file or directory\n", name)
+		fmt.Printf("open %s: no such file or directory\n\n", name)
 		return false
 	}
 	return true
