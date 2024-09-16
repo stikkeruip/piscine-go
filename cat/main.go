@@ -9,7 +9,7 @@ import (
 
 func checkFile(e error, name string) bool {
 	if e != nil {
-		str := "ERROR: open " + name + ": No such file or directory"
+		str := "ERROR: open " + name + ": no such file or directory"
 		for _, r := range str {
 			z01.PrintRune(r)
 		}
