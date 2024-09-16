@@ -39,7 +39,7 @@ func main() {
 			if errExit {
 				fmt.Printf("\n")
 			}
-			fmt.Printf("\n%s", data[start:])
+			fmt.Printf("%s", data[start:])
 		} else {
 			fmt.Printf("\n")
 			errExit = true
