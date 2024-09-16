@@ -7,7 +7,7 @@ import (
 
 func checkFile(e error, name string) bool {
 	if e != nil {
-		fmt.Printf("open %s: no such file or directory\n", name)
+		fmt.Printf("open %s: no such file or directory\n\n", name)
 		return false
 	}
 	return true
@@ -32,7 +32,7 @@ func main() {
 				start = 0
 			}
 			data, _ := os.ReadFile(f)
-			fmt.Printf("\n==> %s <==", f)
+			fmt.Printf("==> %s <==", f)
 			fmt.Printf("\n%s", data[start:])
 		} else {
 			errExit = true
