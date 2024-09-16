@@ -1,4 +1,4 @@
 {
-    "go.formatTool": "gofumpt",
+    "go.formatTool": "goimports",
     "editor.formatOnSave": true
 }
