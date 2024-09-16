@@ -12,7 +12,7 @@ func checkFile(e error, name string) {
 }
 
 func main() {
-	//filenames := os.Args[1:]
+	// filenames := os.Args[1:]
 
 	for _, f := range os.Args[1:] {
 		data, err := os.ReadFile(f)
