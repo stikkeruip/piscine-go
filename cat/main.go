@@ -1,8 +1,7 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
+	"io"
 	"os"
 
 	"github.com/01-edu/z01"
@@ -22,12 +21,10 @@ func checkFile(e error, name string) bool {
 }
 
 func main() {
-	// filenames := os.Args[1:]
 	if len(os.Args) == 1 {
-		reader := bufio.NewReader(os.Stdin)
-		message, _ := reader.ReadString('\n')
+		input, _ := io.ReadAll(os.Stdin)
 
-		for _, r := range message {
+		for _, r := range string(input) {
 			z01.PrintRune(r)
 		}
 		return
@@ -35,7 +32,9 @@ func main() {
 	for _, f := range os.Args[1:] {
 		data, err := os.ReadFile(f)
 		if checkFile(err, f) {
-			fmt.Println(data)
+			for _, r := range string(data) {
+				z01.PrintRune(r)
+			}
 		}
 	}
 }
