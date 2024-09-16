@@ -7,7 +7,7 @@ import (
 
 func checkFile(e error, name string) bool {
 	if e != nil {
-		fmt.Printf("open %s: no such file or directory\n\n", name)
+		fmt.Printf("open %s: no such file or directory\n", name)
 		return false
 	}
 	return true
@@ -33,10 +33,17 @@ func main() {
 	for _, f := range os.Args[3:] {
 		file, err := os.Open(f)
 		if checkFile(err, f) {
-			// Print a newline before the header if it's not the first file and the previous file didn't have an error
-			if !firstFile && !prevHadError {
-				fmt.Printf("\n")
+			// Handle newlines before the file header
+			if !firstFile {
+				// If the previous output was an error, print one newline
+				if prevHadError {
+					fmt.Printf("\n")
+				} else {
+					// If the previous output was not an error, print one newline
+					fmt.Printf("\n")
+				}
 			}
+			// Print the header
 			fmt.Printf("==> %s <==\n", f)
 
 			// Read the file content
