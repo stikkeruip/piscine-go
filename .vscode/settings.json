@@ -1,4 +1,6 @@
 {
-    "go.formatTool": "goimports",
+    "go.formatTool": "gofumpt",
+    "go.gofumptPath": "/home/ustikker/go/bin/gofumpt",
+    "go.goimportsPath": "/home/ustikker/go/bin/goimports",
     "editor.formatOnSave": true
 }
