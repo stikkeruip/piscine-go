@@ -14,6 +14,11 @@ func checkFile(e error, name string) bool {
 }
 
 func main() {
+	if len(os.Args) < 4 {
+		fmt.Println("Usage: go run . -c <number> <file1> <file2> ...")
+		os.Exit(1)
+	}
+
 	numStr := os.Args[2]
 	num := 0
 	errExit := false
@@ -21,6 +26,8 @@ func main() {
 	for _, r := range numStr {
 		num = num*10 + int(r-'0')
 	}
+
+	firstFile := true
 
 	for _, f := range os.Args[3:] {
 		file, err := os.Open(f)
@@ -32,17 +39,24 @@ func main() {
 				start = 0
 			}
 			data, _ := os.ReadFile(f)
-			if errExit {
+
+			// Print a newline between files, except before the first file
+			if !firstFile {
 				fmt.Printf("\n")
 			}
-			fmt.Printf("==> %s <==", f)
-			if errExit {
-				fmt.Printf("\n")
-			}
+
+			// Print the header and content with appropriate newlines
+			fmt.Printf("==> %s <==\n", f)
 			fmt.Printf("%s", data[start:])
+
+			firstFile = false
 		} else {
-			fmt.Printf("\n")
+			// Handle file open error
+			if !firstFile {
+				fmt.Printf("\n")
+			}
 			errExit = true
+			firstFile = false
 		}
 	}
 
