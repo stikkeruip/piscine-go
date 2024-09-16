@@ -33,7 +33,7 @@ func main() {
 			}
 			data, _ := os.ReadFile(f)
 			fmt.Printf("\n==> %s <==", f)
-			fmt.Printf("%s", data[start:])
+			fmt.Printf("\n%s", data[start:])
 		} else {
 			fmt.Printf("\n")
 			errExit = true
