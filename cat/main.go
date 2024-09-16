@@ -35,7 +35,8 @@ func main() {
 			for _, r := range string(data) {
 				z01.PrintRune(r)
 			}
+		} else {
+			os.Exit(1)
 		}
 	}
-	os.Exit(1)
 }
