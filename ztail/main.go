@@ -36,7 +36,7 @@ func main() {
 				fmt.Printf("\n")
 			}
 			fmt.Printf("==> %s <==", f)
-			if !errExit {
+			if errExit {
 				fmt.Printf("\n")
 			}
 			fmt.Printf("\n%s", data[start:])
