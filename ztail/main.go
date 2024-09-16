@@ -3,18 +3,11 @@ package main
 import (
 	"fmt"
 	"os"
-
-	"github.com/01-edu/z01"
 )
 
 func checkFile(e error, name string) bool {
 	if e != nil {
-		str := "open " + name + ": no such file or directory"
-		for _, r := range str {
-			z01.PrintRune(r)
-		}
-
-		z01.PrintRune('\n')
+		fmt.Printf("open %s: no such file or directory\n", name)
 		return false
 	}
 	return true
