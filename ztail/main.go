@@ -27,9 +27,13 @@ func main() {
 		if checkFile(err, f) {
 			fileInfo, _ := file.Stat()
 			size := fileInfo.Size()
+			start := size - int64(num)
+			if start < 0 {
+				start = 0
+			}
 			data, _ := os.ReadFile(f)
 			fmt.Printf("==> %s <==\n", f)
-			fmt.Printf("%s\n", data[size-int64(num):])
+			fmt.Printf("%s\n", data[start:])
 		} else {
 			errExit = true
 		}
