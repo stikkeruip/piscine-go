@@ -84,9 +84,7 @@ func Atoi(s string) int {
 			os.Exit(0)
 		}
 	}
-
 	return result * sign
-
 }
 
 func writeString(s string) {
