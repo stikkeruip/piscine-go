@@ -5,6 +5,11 @@ import (
 )
 
 func main() {
+
+	if len(os.Args) < 4 {
+		return
+	}
+
 	strNum1 := os.Args[1]
 	op := os.Args[2]
 	strNum2 := os.Args[3]
