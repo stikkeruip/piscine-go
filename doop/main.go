@@ -38,7 +38,6 @@ func main() {
 
 		// Convert the result to a string and print each rune
 		printInt(result)
-		writeRune('\n')
 	} else {
 		return // Return early if the operator is invalid
 	}
