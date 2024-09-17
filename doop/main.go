@@ -2,8 +2,6 @@ package main
 
 import (
 	"os"
-
-	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -99,12 +97,12 @@ func writeRune(r rune) {
 
 func printInt(n int) {
 	if n == 0 {
-		z01.PrintRune('0')
+		writeRune('0')
 		return
 	}
 
 	if n < 0 {
-		z01.PrintRune('-')
+		writeRune('-')
 		n = -n
 	}
 
