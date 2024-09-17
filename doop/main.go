@@ -5,7 +5,6 @@ import (
 )
 
 func main() {
-
 	if len(os.Args) < 4 {
 		return
 	}
