@@ -1,10 +1,15 @@
 package piscine
 
 func IsSorted(f func(a, b int) int, a []int) bool {
+	isAscending := true
+	isDescending := true
+
 	for i := 0; i < len(a)-1; i++ {
 		if f(a[i], a[i+1]) > 0 {
-			return false
+			isDescending = false
+		} else {
+			isAscending = false
 		}
 	}
-	return true
+	return !(isAscending == isDescending)
 }
