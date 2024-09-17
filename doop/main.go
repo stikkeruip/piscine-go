@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"os"
 
 	"github.com/01-edu/z01"
@@ -21,14 +20,14 @@ func main() {
 		"*": func(a, b int) int { return a * b },
 		"/": func(a, b int) int {
 			if b == 0 {
-				fmt.Println("No division by 0")
+				writeString("No division by 0")
 				os.Exit(0)
 			}
 			return a / b
 		},
 		"%": func(a, b int) int {
 			if b == 0 {
-				fmt.Println("No modulo by 0")
+				writeString("No modulo by 0")
 				os.Exit(0)
 			}
 			return a % b
@@ -90,6 +89,14 @@ func Atoi(s string) int {
 	return result * sign
 }
 
+func writeString(s string) {
+	os.Stdout.Write([]byte(s))
+}
+
+func writeRune(r rune) {
+	os.Stdout.Write([]byte(string(r)))
+}
+
 func printInt(n int) {
 	if n == 0 {
 		z01.PrintRune('0')
@@ -110,7 +117,7 @@ func printInt(n int) {
 
 	// Print digits in reverse order
 	for i := len(digits) - 1; i >= 0; i-- {
-		z01.PrintRune(digits[i])
+		writeRune(digits[i])
 	}
-	z01.PrintRune('\n')
+	writeRune('\n')
 }
