@@ -18,14 +18,14 @@ func main() {
 		"*": func(a, b int) int { return a * b },
 		"/": func(a, b int) int {
 			if b == 0 {
-				writeString("No division by 0")
+				writeString("No division by 0\n")
 				os.Exit(0)
 			}
 			return a / b
 		},
 		"%": func(a, b int) int {
 			if b == 0 {
-				writeString("No modulo by 0")
+				writeString("No modulo by 0\n")
 				os.Exit(0)
 			}
 			return a % b
