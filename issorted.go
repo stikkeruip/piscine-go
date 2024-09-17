@@ -1,6 +1,10 @@
 package piscine
 
 func IsSorted(f func(a, b int) int, a []int) bool {
+	if len(a) == 0 {
+		return true
+	}
+
 	isAscending := true
 	isDescending := true
 
