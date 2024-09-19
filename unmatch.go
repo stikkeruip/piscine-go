@@ -6,10 +6,12 @@ func Unmatch(a []int) int {
 	for _, n := range a {
 		seen[n]++
 	}
+
+	unmatched := -1
 	for key, value := range seen {
 		if value%2 != 0 {
-			return key
+			unmatched = key
 		}
 	}
-	return -1
+	return unmatched
 }
