@@ -13,6 +13,7 @@ func main() {
 	for _, s := range os.Args {
 		if s == "01" || s == "galaxy" || s == "galaxy 01" {
 			fmt.Println("Alert!!!")
+			return
 		}
 	}
 }
