@@ -22,5 +22,6 @@ func DescendComb() {
 			}
 		}
 	}
+	z01.PrintRune(rune(1 + '0'))
 	z01.PrintRune('\n')
 }
