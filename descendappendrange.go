@@ -1,11 +1,11 @@
 package piscine
 
 func DescendAppendRange(max, min int) []int {
-	var numSlice []int
-
 	if max < min {
-		return numSlice
+		return []int{}
 	}
+
+	var numSlice []int
 	if max == min {
 		numSlice = append(numSlice, max)
 	}
