@@ -10,9 +10,10 @@ func Unmatch(a []int) int {
 	unmatched := -1
 	for key, value := range seen {
 		if value%2 != 0 {
-			if key > unmatched {
+			/*if key > unmatched {
 				unmatched = key
-			}
+			}*/
+			return key
 		}
 	}
 	return unmatched
