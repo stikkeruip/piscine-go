@@ -8,9 +8,16 @@ import (
 
 func DealAPackOfCards(deck []int) {
 	first := true
-	for i := 0; i < 4; i++ {
+	people := 6
+	evenCards := len(deck) / people
+
+	dealCards(deck, people, evenCards, first)
+}
+
+func dealCards(deck []int, people int, evenCards int, first bool) {
+	for i := 0; i < people; i++ {
 		fmt.Printf("Player %d: ", i+1)
-		for j := i * 3; j < 3+(i*3); j++ {
+		for j := i * evenCards; j < evenCards+(i*evenCards); j++ {
 			if first {
 				first = false
 				fmt.Printf("%d", deck[j])
