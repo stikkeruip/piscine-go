@@ -21,5 +21,9 @@ func FoodDeliveryTime(order string) int {
 		}
 	}
 
+	if sum == 0 {
+		return 404
+	}
+
 	return sum
 }
