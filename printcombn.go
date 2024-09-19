@@ -27,7 +27,3 @@ func PrintCombN(n int) {
 	recurse(0, 0)
 	z01.PrintRune('\n')
 }
-
-func main() {
-	PrintCombN(3)
-}
