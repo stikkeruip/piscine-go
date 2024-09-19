@@ -7,7 +7,7 @@ func Unmatch(a []int) int {
 		seen[n]++
 	}
 	for key, value := range seen {
-		if value == 1 {
+		if value%2 != 0 {
 			return key
 		}
 	}
