@@ -14,10 +14,28 @@ func Unmatch(a []int) int {
 				unmatched = key
 				continue
 			}
-			if key < unmatched {
+			if findAscii(key) < findAscii(unmatched) {
 				unmatched = key
 			}
 		}
 	}
+
 	return unmatched
+}
+
+func findAscii(num int) int {
+	sum := 0
+
+	if num < 0 {
+		num = -num
+	}
+
+	for num > 0 {
+		digit := num % 10        // Get the last digit
+		asciiValue := digit + 48 // Convert the digit to its ASCII value
+		sum += asciiValue        // Add the ASCII value to the sum
+		num /= 10                // Remove the last digit
+	}
+
+	return sum
 }
