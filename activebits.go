@@ -1,8 +1,8 @@
 package piscine
 
 func ActiveBits(n int) int {
-	if n == 1 || n == 0 {
-		return 1
+	if n == 0 {
+		return 0
 	}
-	return 1 + ActiveBits(n/2)
+	return n%2 + ActiveBits(n/2)
 }
