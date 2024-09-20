@@ -4,27 +4,28 @@ func LoafOfBread(str string) string {
 	if str == "" {
 		return "\n"
 	}
-	// Remove spaces and get the letters
+
+	// Remove spaces to get all letters
 	letters := ""
 	for _, r := range str {
 		if r != ' ' {
 			letters += string(r)
 		}
 	}
+
+	// Check if there are at least 5 letters
 	if len(letters) < 5 {
 		return "Invalid Input\n"
 	}
-	// Initialize variables
+
+	// Build the final string with spaces after every 5 letters
 	finStr := ""
-	count := 0
 	for i, r := range letters {
 		finStr += string(r)
-		count++
-		// Add a space after every 5 letters, except after the last group
-		if count == 5 && i != len(letters)-1 {
+		if (i+1)%5 == 0 && i != len(letters)-1 {
 			finStr += " "
-			count = 0
 		}
 	}
+
 	return finStr + "\n"
 }
