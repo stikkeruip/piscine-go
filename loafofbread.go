@@ -21,26 +21,41 @@ func LoafOfBread(str string) string {
 	// Process the input string
 	finStr := ""
 	lettersCollected := 0
+	skipNext := false
 	strRunes := []rune(str) // Convert string to rune slice for proper indexing
 	i := 0
 	for i < len(strRunes) {
+		if skipNext {
+			skipNext = false
+			i++
+			continue
+		}
+
 		r := strRunes[i]
 		if r != ' ' {
 			finStr += string(r)
 			lettersCollected++
 			if lettersCollected == 5 {
-				// Skip the next character in the input string
-				i++
 				lettersCollected = 0
-				// Add a space if not at the end
-				if i < len(strRunes) {
+				skipNext = true // Skip next character in the input string
+				// Add a space if there are more letters ahead
+				if hasMoreLettersAfter(i, strRunes) {
 					finStr += " "
 				}
-				continue
 			}
 		}
 		i++
 	}
 
 	return finStr + "\n"
+}
+
+// Helper function to check if there are more letters after the current position
+func hasMoreLettersAfter(pos int, strRunes []rune) bool {
+	for j := pos + 1; j < len(strRunes); j++ {
+		if strRunes[j] != ' ' {
+			return true
+		}
+	}
+	return false
 }
