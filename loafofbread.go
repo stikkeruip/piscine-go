@@ -21,5 +21,8 @@ func LoafOfBread(str string) string {
 		finStr += string(r)
 		count++
 	}
+	if finStr[len(finStr)-1] == ' ' {
+		finStr = finStr[:len(finStr)-1]
+	}
 	return finStr + "\n"
 }
