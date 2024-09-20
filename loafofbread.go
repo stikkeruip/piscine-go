@@ -1,20 +1,21 @@
 package piscine
 
 func LoafOfBread(str string) string {
-	if str == "" {
-		return "\n"
-	}
-
-	// Count the number of letters (excluding spaces)
-	letterCount := 0
+	// Remove spaces to get all letters
+	letters := ""
 	for _, r := range str {
 		if r != ' ' {
-			letterCount++
+			letters += string(r)
 		}
 	}
 
+	// If no letters, return "\n"
+	if len(letters) == 0 {
+		return "\n"
+	}
+
 	// If less than 5 letters, return "Invalid Output\n"
-	if letterCount < 5 {
+	if len(letters) < 5 {
 		return "Invalid Output\n"
 	}
 
@@ -54,10 +55,4 @@ func LoafOfBread(str string) string {
 func hasMoreLettersAfter(pos int, strRunes []rune) bool {
 	// Skip the next character in the input string
 	pos += 2
-	for j := pos; j < len(strRunes); j++ {
-		if strRunes[j] != ' ' {
-			return true
-		}
-	}
-	return false
-}
+	for j := pos;
