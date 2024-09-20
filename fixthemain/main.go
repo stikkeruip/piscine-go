@@ -19,18 +19,23 @@ func PrintStr(s string) {
 	}
 }
 
+func OpenDoor(door *Door) {
+	door.state = OPEN
+	PrintStr("Door Opening...\n")
+}
+
 func CloseDoor(ptrDoor *Door) {
-	PrintStr("Door Closing...")
+	PrintStr("Door Closing...\n")
 	ptrDoor.state = CLOSE
 }
 
 func IsDoorOpen(ptrDoor *Door) bool {
-	PrintStr("is the Door opened ?")
+	PrintStr("is the Door opened ?\n")
 	return ptrDoor.state == OPEN
 }
 
 func IsDoorClose(ptrDoor *Door) bool {
-	PrintStr("is the Door closed ?")
+	PrintStr("is the Door closed ?\n")
 	return ptrDoor.state == CLOSE
 }
 
@@ -47,9 +52,4 @@ func main() {
 	if door.state == OPEN {
 		CloseDoor(door)
 	}
-}
-
-func OpenDoor(door *Door) {
-	door.state = OPEN
-	PrintStr("Door Opening...")
 }
