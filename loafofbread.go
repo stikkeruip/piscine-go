@@ -1,7 +1,10 @@
 package piscine
 
 func LoafOfBread(str string) string {
-	if len(str) < 5 || str == "" {
+	if str == "" {
+		return "\n"
+	}
+	if len(str) < 5 {
 		return "Invalid Input\n"
 	}
 	finStr := ""
