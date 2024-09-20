@@ -38,7 +38,7 @@ func LoafOfBread(str string) string {
 			if lettersCollected == 5 {
 				lettersCollected = 0
 				skipNext = true // Skip next character in the input string
-				// Add a space if there are more letters ahead
+				// Add a space if there are more letters ahead (after skipping next character)
 				if hasMoreLettersAfter(i, strRunes) {
 					finStr += " "
 				}
@@ -52,7 +52,9 @@ func LoafOfBread(str string) string {
 
 // Helper function to check if there are more letters after the current position
 func hasMoreLettersAfter(pos int, strRunes []rune) bool {
-	for j := pos + 1; j < len(strRunes); j++ {
+	// Skip the next character in the input string
+	pos += 2
+	for j := pos; j < len(strRunes); j++ {
 		if strRunes[j] != ' ' {
 			return true
 		}
