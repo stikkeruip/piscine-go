@@ -55,4 +55,10 @@ func LoafOfBread(str string) string {
 func hasMoreLettersAfter(pos int, strRunes []rune) bool {
 	// Skip the next character in the input string
 	pos += 2
-	for j := pos;
+	for j := pos; j < len(strRunes); j++ {
+		if strRunes[j] != ' ' {
+			return true
+		}
+	}
+	return false
+}
