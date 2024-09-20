@@ -10,18 +10,17 @@ func LoafOfBread(str string) string {
 	finStr := ""
 	count := 0
 	for _, r := range str {
+		if r == ' ' {
+			continue
+		}
 		if count == 5 {
 			finStr += " "
 			count = 0
-			continue
-		}
-		if r == ' ' {
-			continue
 		}
 		finStr += string(r)
 		count++
 	}
-	if finStr[len(finStr)-1] == ' ' {
+	if len(finStr) > 0 && finStr[len(finStr)-1] == ' ' {
 		finStr = finStr[:len(finStr)-1]
 	}
 	return finStr + "\n"
