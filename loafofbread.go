@@ -5,26 +5,41 @@ func LoafOfBread(str string) string {
 		return "\n"
 	}
 
-	// Remove spaces to get all letters
-	letters := ""
+	// Count the number of letters (excluding spaces)
+	letterCount := 0
 	for _, r := range str {
 		if r != ' ' {
-			letters += string(r)
+			letterCount++
 		}
 	}
 
-	// Check if there are at least 5 letters
-	if len(letters) < 5 {
-		return "Invalid Input\n"
+	// If less than 5 letters, return "Invalid Output\n"
+	if letterCount < 5 {
+		return "Invalid Output\n"
 	}
 
-	// Build the final string with spaces after every 5 letters
+	// Process the input string
 	finStr := ""
-	for i, r := range letters {
-		finStr += string(r)
-		if (i+1)%5 == 0 && i != len(letters)-1 {
-			finStr += " "
+	lettersCollected := 0
+	strRunes := []rune(str) // Convert string to rune slice for proper indexing
+	i := 0
+	for i < len(strRunes) {
+		r := strRunes[i]
+		if r != ' ' {
+			finStr += string(r)
+			lettersCollected++
+			if lettersCollected == 5 {
+				// Skip the next character in the input string
+				i++
+				lettersCollected = 0
+				// Add a space if not at the end
+				if i < len(strRunes) {
+					finStr += " "
+				}
+				continue
+			}
 		}
+		i++
 	}
 
 	return finStr + "\n"
