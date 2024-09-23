@@ -10,4 +10,7 @@ func ListReverse(l *List) {
 		prev = curr
 		curr = next
 	}
+	temp := l.Head
+	l.Head = prev
+	l.Tail = temp
 }
