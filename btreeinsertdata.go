@@ -21,5 +21,5 @@ func BTreeInsertData(root *TreeNode, data string) *TreeNode {
 		}
 		return BTreeInsertData(root.Right, data)
 	}
-	return root
+	return nil
 }
