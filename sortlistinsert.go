@@ -19,5 +19,7 @@ func SortListInsert(l *NodeI, data_ref int) *NodeI {
 		prev = curr
 		curr = curr.Next
 	}
+
+	prev.Next = temp
 	return l
 }
