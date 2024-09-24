@@ -8,16 +8,8 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 		return root
 	}
 	if elem < root.Data {
-		res := BTreeSearchItem(root.Left, elem)
-		if res != nil {
-			res.Parent = root
-		}
-		return res
+		return BTreeSearchItem(root.Left, elem)
 	} else {
-		res := BTreeSearchItem(root.Right, elem)
-		if res != nil {
-			res.Parent = root
-		}
-		return res
+		return BTreeSearchItem(root.Right, elem)
 	}
 }
