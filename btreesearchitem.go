@@ -7,11 +7,17 @@ func BTreeSearchItem(root *TreeNode, elem string) *TreeNode {
 	if elem == root.Data {
 		return root
 	}
-	if elem > root.Data {
-		BTreeSearchItem(root.Right, elem).Parent = root
-		return root.Right
+	if elem < root.Data {
+		res := BTreeSearchItem(root.Left, elem)
+		if res != nil {
+			res.Parent = root
+		}
+		return res
 	} else {
-		BTreeSearchItem(root.Left, elem).Parent = root
-		return root.Left
+		res := BTreeSearchItem(root.Right, elem)
+		if res != nil {
+			res.Parent = root
+		}
+		return res
 	}
 }
