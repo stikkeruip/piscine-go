@@ -1,7 +1,6 @@
 package piscine
 
 func BTreeApplyByLevel(root *TreeNode, f func(...interface{}) (int, error)) {
-
 	queue := []*TreeNode{root}
 	for len(queue) > 0 {
 		curr := queue[0]
